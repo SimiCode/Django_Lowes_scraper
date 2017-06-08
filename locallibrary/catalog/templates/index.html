@@ -1,18 +1,44 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Local Library Home</h1>
+<h1>Lowes Scraper : </h1>
 
-  <p>Welcome to <em>LocalLibrary</em>, a very basic Django website developed as a tutorial example on the Mozilla Developer Network.</p>
+  <p>Welcome to <em>E-com scraper</em>, a very basic python web-scraping app.</p>
 
-<h2>Dynamic content</h2>
 
-  <p>The library has the following record counts:</p>
+  <p>Enter Your Category choice number and search terms below:</p>
   <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-    <li><strong>Copies:</strong> {{ num_instances }}</li>
-    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong> 1. Fans</strong> </li>
+    <li><strong> 2. Landscape Lighting</strong> </li>
   </ul>
+
+	</br>
+	</br>
+
+	<form method="GET">
+	    Category: __..<input type="text" name="cat"><br/>
+	    </br>
+	    Search terms: <input type="text" name="terms"><br/>
+	    <input type="submit" value="Submit" />
+	</form><br/><br/>
+
+
+	<p>{{search}}</p>
+	<p>{{name}}</p>
+
+
+	{% for title in cat %}
+	<h3>{{title}}</h3>
+	{% endfor %}
+
+		</br>
+
+	{% for title in terms %}
+	<p>{{title}}</p>
+	{% endfor %}
+
+	</br></br>
+	</br></br>
+
 
 {% endblock %}
